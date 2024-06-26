@@ -16,3 +16,6 @@ class Produto(models.Model):
     data_validade = models.DateField(auto_now=True)
     categoria = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     dono = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return self.nome_produto
